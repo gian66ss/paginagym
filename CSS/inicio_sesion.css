@@ -28,25 +28,6 @@ body{
     color: var(--text-color);
 }
 
-.header{
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 10% 1rem;
-    background: rgba(0, 0, 0, 0.3) ;
-    backdrop-filter: blur(10px);
-    z-index: 5;
-  }
-.logo{
-    font-size: 2rem;
-    color: var(--text-color);
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.3s ease;
-  
-}
-  
 .navbar a{
   font-size: 1.8rem;
   color: var(--text-color);
