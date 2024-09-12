@@ -1,40 +1,40 @@
 //importamos el modelo
-const Tickets = require('../models/Tickets.js');
+const CuentasGym = require('../models/Cuentas.js');
 
 //creamos el nuevo controlador
-const TicketsController = {};
+const CuentasGymController = {};
 
-TicketsController.MostrarTickets = async (req, res) => {
- const listado = await Tickets.find(); //treaemos todos los datos del modelo
+CuentasGymController.MostrarCuenta = async (req, res) => {
+ const listado = await CuentasGym.find(); //treaemos todos los datos del modelo
  res.send(listado); //lo enviamossssssss
 }
 
-TicketsController.ModificarTickets = async (req, res) => {
+CuentasGymController.ModificarCuenta = async (req, res) => {
     return 0;
    } 
    
 
-TicketsController.NuevoTickets= async (req, res) => {
+CuentasGymController.NuevaCuenta= async (req, res) => {
     // Para obtener un dato en particular
-    const { Personal, Usuario, Problema } = req.body;
+    const { Nombre, Apellido, Correo } = req.body;
     console.log(req.body);
 
     // Si existen los 4 datos
-    if ( Personal && Usuario && Problema ) {
+    if ( Nombre && Apellido && Correo ) {
         // Creamos un nuevo item
-        const Nuevotickets = new Tickets ({Personal, Usuario, Problema});
-        console.log(this.Nuevotickets);
+        const NuevaCuenta = new CuentasGym ({Nombre, Apellido, Correo});
+        console.log(this.NuevaCuenta);
 
 
         try {
             // Guardamos el nuevo item 
-            let r = await Nuevotickets.save();
+            let r = await NuevoCuenta.save();
 
             // Verificamos si se creó el recurso
             if (r){
-                res.status(200).json({msg: 'Ticket creado'});
+                res.status(200).json({msg: 'Cuenta creado'});
             } else {
-                res.status(500).json({error: 'No se pudo crear el Ticket'});
+                res.status(500).json({error: 'No se pudo crear la Cuenta'});
             }
         } catch (e) {
             console.log(e);
@@ -49,7 +49,7 @@ TicketsController.NuevoTickets= async (req, res) => {
     
 };
 
-TicketsController.EliminarItem = async (req, res) => {
+CuentasGymController.EliminarItem = async (req, res) => {
     const id = req.params.id;
 
     if (id){

@@ -1,15 +1,15 @@
 const {Schema, model} = require('mongoose');
 const bcrypt = require('bcryptjs');
-const TicketsSchema = new Schema({
-    Personal: {
+const CuentaSchema = new Schema({
+    Nombre: {
         type: String,
          required: true
     },
-    Usuario: {
+    Apellido: {
         type:String,
         required: true
     },
-    Problema: {
+    Correo: {
         type: String,
         required: true,
     },
@@ -29,4 +29,4 @@ const TicketsSchema = new Schema({
 //}
 
 // Modelo creado a partir del esquema
-module.exports = model('CrearTickets', TicketsSchema, 'CrearTickets');
+module.exports = model('CrearCuenta', CuentaSchema, 'CrearCuenta');

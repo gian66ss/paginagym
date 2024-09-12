@@ -17,7 +17,7 @@ app.use(cors());        // Habilita el cors
 
 // Configuramos las rutas
 app.use('/api', require('./Routes/rutas.js'));
-app.use('/', require('./Routes/Tickets1.js'));
+app.use('/', require('./Routes/Cuenta2.js'));
 // Levantamos la APP
 app.listen(3000, () => {
     console.log(`Servidor en puerto ${app.get('port')}`);
