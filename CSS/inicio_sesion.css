@@ -5,7 +5,6 @@
     color: #fff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     border: none;
     outline: none;
     scroll-behavior: smooth;
@@ -13,7 +12,7 @@
 }
 
 html{
-    font-size: 60%;
+    font-size: 70%;
     overflow-x: hidden;
 }
 
@@ -28,24 +27,6 @@ body{
     color: var(--text-color);
 }
 
-.navbar a{
-  font-size: 1.8rem;
-  color: var(--text-color);
-  margin-left: 3rem;
-  font-weight:500;
-  transition: 0.3s ease;
-  border-bottom: 3px  solid transparent;
-}
-.navbar  a:hover,
-.navbar a.active{
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-}
-
-section{
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
-}
 ::-webkit-input-placeholder{
     color: #eee;
 }
@@ -110,7 +91,7 @@ section{
     top: 0;
     right: 0;
     width: 450px;
-    height: 390px;
+    height: 440px;
     background: linear-gradient(to right,#00ffee,#000000 );
     clip-path: polygon(0 0,100% 0,100% 100%, 60% 100%);
     padding-right: 70px;
@@ -141,46 +122,46 @@ section{
 
 
 .header{
-    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3) ;
+    width: 168%;
+    padding: 1%;
+    background: rgb(0, 0, 0) ;
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
-}
-.logo{
+    margin-left: -35%;
+  }
+  .logo{
     font-size: 3rem;
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease;
-
-}
-.logo:hover{
+  }
+  
+  .logo:hover{
     transform: scale(1.1);
-}
-.logo span{
-    text-shadow:  0 0 25px var(--main-color);
-}
-.navbar a{
-font-size: 1.8rem;
-color: var(--text-color);
-margin-left: 4rem;
-font-weight:500;
-transition: 0.3s ease;
-border-bottom: 3px  solid transparent;
-}
-.navbar  a:hover,
-.navbar a.active{
+  }
+  .logo span{
+    text-shadow:  0 0 12px var(--main-color);
+  }
+  .navbar a{
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-left: 2rem;
+  font-weight:500;
+  transition: 0.3s ease;
+  border-bottom: 3px  solid transparent;
+  }
+  .navbar  a:hover,
+  .navbar a.active{
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
-}
-
+  }
+  
 .home-content{
 display: flex;
 flex-direction: column;
