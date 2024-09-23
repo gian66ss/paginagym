@@ -124,7 +124,7 @@ body{
 .header{
     top: 0;
     left: 0;
-    width: 168%;
+    width: 160%;
     padding: 1%;
     background: rgb(0, 0, 0) ;
     backdrop-filter: blur(10px);
