@@ -23,21 +23,21 @@
 
     <main>
         <div class="wrapper">
-            <form action="" class="form">
+            <form   action="" class="form">
                 <h1 class="title">Inicio</h1>
                 <div class="inp">
-                    <input type="text" name="" id="" class="input" placeholder="usuario">
+                    <input type="text" name="" id="usuario" class="input" placeholder="usuario">
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="inp">
-                    <input type="password" name="" id="" class="input" placeholder="correo">
+                    <input type="text" name="" id="correo" class="input" placeholder="correo">
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <div class="inp">
-                    <input type="password" name="" id="" class="input" placeholder="contraseña">
+                    <input type="password" name="" id="password" class="input" placeholder="contraseña">
                     <i class="fa-solid fa-lock"></i>
                 </div>
-                <button class="submit">Registrarse</button>
+                <button class="submit" type="button" onclick="crearUser()">Registrarse</button>
                 <p class="footer">¿Ya tienes cuenta?  <a href="../HTML/inicio_sesion.html" class="link">iniciar sesion</a></p>   
             </form>
             <div></div>
@@ -48,5 +48,6 @@
             </div>
         </div>
     </main>
+    <script src="../JS/Usuario.js"></script>
 </body>
 </html>            
