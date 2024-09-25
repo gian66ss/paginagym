@@ -27,10 +27,10 @@ function renderUsers(users) {
         const expirationFormatted = expirationDate.toLocaleDateString('es-ES', options);
 
         userDiv.innerHTML = `
-            <p><strong>${user.name}</strong></p>
+            <p class="nombre"><strong>${user.name}</strong></p>
             <label for="date-${index}">Último Pago:</label>
             <input type="date" id="date-${index}" value="${user.lastPayment}">
-            <p id="expiration-${index}">Vence el: <strong>${expirationFormatted}</strong></p>
+            <p class="vence-el" id="expiration-${index}">Vence el: <strong>${expirationFormatted}</strong></p>
             <p id="alert-${index}" class="alert"></p>
             <button onclick="updatePaymentInfo(${index})">Actualizar Fecha de Pago</button>
         `;
