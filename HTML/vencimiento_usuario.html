@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login web</title>
+    <link rel="stylesheet" href="../CSS/vencimiento_usuario.css">
+    <link rel="stylesheet" href="cl-icon/css/all.min.css">
+</head>
+
+<header class="header">
+    <div class="logito">
+      <a href="#home" class="logo">Gimnasio
+        <span>Branco</span>
+    </a>
+    </div>
+  
+      <nav class="navbar">
+        <a href="../HTML/index.html" class="active">inicio</a>
+        <a href="../HTML/inicio_sesion.html">iniciar sesion</a>
+        <a href="../HTML/vencimiento.html">vencimiento</a>
+        <a href="../HTML/declaracionjurada.html">declaracion jurada</a>
+      </nav>
+    </header>
+
+    <div class="container">
+            <div id="users-info" class="users-info">
+              <!-- Aquí se mostrará la información de los usuarios -->
+          </div>         
+    </div>
+
+    <script src="../JS/vencimiento.js"></script>
+    <script src="../JS/mostrar_vencimientos.js"></script>
+    <script src="../JS/Cuenta.js"></script>
+    <script>
+      mostrar_vencimientos();
+    </script>
+</body>
+</html>            
