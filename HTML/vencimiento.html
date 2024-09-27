@@ -11,32 +11,31 @@
 <header class="header">
     <a href="#home" class="logo">Gimnasio
         <span>Branco</span>
-        <i class='bx bx-menu' id="menu-icon"></i>
     </a>
-    <nav class="navbar">
+    <!-- <nav class="navbar"> -->
         <a href="../HTML/index.html" class="active">inicio</a>
         <a href="../HTML/inicio_sesion.html">iniciar sesion</a>
         <a href="../HTML/vencimiento.html">vencimiento</a>
         <a href="../HTML/declaracionjurada.html">declaracion jurada</a>
-    </nav>
+    <!-- </nav> -->
     </header>
 
     <div class="container">
         <!-- Formulario para agregar un nuevo usuario -->
         <div class="add-user-form">
           <h1>Control de Pagos del Gimnasio</h1>
-            <h2>Agregar nuevo usuario</h2>
+            <h2 class="nuevo">Agregar nuevo usuario</h2>
             <label for="newUserName">Nombre del usuario:</label>
             <input type="text" id="newUserName" placeholder="Nombre completo">
             
             <label for="newUserDate">Último pago:</label>
             <input type="date" id="newUserDate">
             
-            <button onclick="addUser()">Agregar Usuario</button>
+            <button class="agregar" onclick="addUser()">Agregar Usuario</button>
             <div>
-              <img class="imagen" src="../imagenes/logo.jpg">
+              <img class="imagen" src="../imagenes/file.png">
             </div>
-            <h1 class="logo">
+            <h1 class="logov2">
               Gimnasio
               <span>
                  Branco
