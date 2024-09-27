@@ -1,7 +1,7 @@
 async function  crearUser(){
 
     inputNombre = document.querySelector("#Nombre");
-    inputApellido = document.querySelector("#Apellido")
+    inputApellido = "GIAN"
     inputCorreo = document.querySelector("#Correo");
     inputPassword = document.querySelector("#Password");
 
@@ -13,7 +13,7 @@ async function  crearUser(){
     
     console.log("creando usuario... ");
     console.log("Nombre: " + inputNombre.value);
-    console.log("Apellido: " + inputApellido.value);
+    console.log("Apellido: " + "Gian");
     // Petición HTTP
     try{   
         respuesta = fetch('http://localhost:3001/CuentasGym/nuevo', {  // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
@@ -26,7 +26,7 @@ async function  crearUser(){
             mode: "no-cors",
             body: new URLSearchParams({    // ACA VAN LOS DATOS
                 'Nombre': inputNombre.value,
-                'Apellido': inputApellido.value,
+                'Apellido': "Gian",
                 'Correo': inputCorreo.value,
                 'Password': inputPassword.value
               })   
@@ -75,6 +75,44 @@ function eliminarUser(){
 
         console.log("Usuario eliminado");
         
+    }
+    
+    
+}
+
+async function buscarUsuario(){
+    inputIDUsuario = document.querySelector("#idUsuario");
+    inputNombre = document.querySelector("#Nombre");
+    inputApellido = "GIAN"
+    inputCorreo = document.querySelector("#Correo");
+    inputPassword = document.querySelector("#Password");
+    
+    const respuesta = await fetch("http://localhost:3001/CuentasGym/mostrar/" + inputIDUsuario
+        , {
+            method: "GET", // *GET, POST, PUT, DELETE, etc.    
+            headers: {
+                'Accept': 'application/json',
+                "Content-Type": "application/json",
+            }
+        });
+
+    datos = await respuesta.json(); 
+
+
+    console.log(datos);
+
+    if (datos.length > 0){
+        console.log("Con datos");
+        datos.forEach(noti => {
+            inputIDNoticia.value= noti._id;
+            inputAutor.value = noti.autor;
+            inputTitulo.value = noti.titulo;
+            inputTexto.value = noti.texto;
+        });
+    }
+    else{
+        console.log("SIN DATOS");
+        alert("Datos no encontrados");
     }
     
     
