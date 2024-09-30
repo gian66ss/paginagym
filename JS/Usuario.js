@@ -1,7 +1,7 @@
 async function  crearUser(){
 
     inputNombre = document.querySelector("#Nombre");
-    inputApellido = "GIAN"
+    inputApellido = document.querySelector("#Apellido")
     inputCorreo = document.querySelector("#Correo");
     inputPassword = document.querySelector("#Password");
 
@@ -13,7 +13,7 @@ async function  crearUser(){
     
     console.log("creando usuario... ");
     console.log("Nombre: " + inputNombre.value);
-    console.log("Apellido: " + "Gian");
+    console.log("Apellido: " + inputApellido.value);
     // Petición HTTP
     try{   
         respuesta = fetch('http://localhost:3001/CuentasGym/nuevo', {  // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
@@ -23,12 +23,12 @@ async function  crearUser(){
                 'Accept': '*/*',
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            mode: "no-cors",
+            mode: "no-cors",    
             body: new URLSearchParams({    // ACA VAN LOS DATOS
                 'Nombre': inputNombre.value,
-                'Apellido': "Gian",
+                'Apellido': inputApellido.value,
                 'Correo': inputCorreo.value,
-                'Password': inputPassword.value
+                'Password': inputPassword.value,
               })   
         })
         .then(response => {
@@ -52,14 +52,14 @@ async function  crearUser(){
     
 
 function eliminarUser(){
-    idUsuario = document.querySelector("#idUser");
+    IDUsuario = document.querySelector("#idUser");
 
     if (confirm("¿Desea eliminar el usuario")){
 
-        console.log("eliminando usuario "+idUsuario.value);
+        console.log("eliminando usuario "+IDUsuario.value);
         try{
             
-            respuesta = fetch('api/usuarios/del/' + idUsuario.value, { // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
+            respuesta = fetch('api/usuarios/del/' + IDUsuario.value, { // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
                 method: 'DELETE', //metodo HTTP -- REEMPLAZAR POR EL METODO CORRESPONDIENTE
                 headers: {   
                     'Accept': 'application/json',
@@ -83,7 +83,7 @@ function eliminarUser(){
 async function buscarUsuario(){
     inputIDUsuario = document.querySelector("#idUsuario");
     inputNombre = document.querySelector("#Nombre");
-    inputApellido = "GIAN"
+    inputApellido = document.querySelector("#Apellido")
     inputCorreo = document.querySelector("#Correo");
     inputPassword = document.querySelector("#Password");
     
@@ -104,10 +104,10 @@ async function buscarUsuario(){
     if (datos.length > 0){
         console.log("Con datos");
         datos.forEach(noti => {
-            inputIDNoticia.value= noti._id;
-            inputAutor.value = noti.autor;
-            inputTitulo.value = noti.titulo;
-            inputTexto.value = noti.texto;
+            inputIDUsuario.value= usu.id;
+            inputNombre.value = usu.Nombre;
+            inputApellido.value = usu.Apellido;
+            inputCorreo.value = usu.Correo;
         });
     }
     else{
