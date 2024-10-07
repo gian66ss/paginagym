@@ -34,7 +34,8 @@
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="inp">
-                    <input type="text" name="" id="Correo" class="input" placeholder="Correo">
+                    <input type="text" name="" id="Correo" pattern="@" class="input" placeholder="Correo" >
+                    <required title="Por favor, incluye un '@' en la dirección.">
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <div class="inp">
@@ -44,7 +45,6 @@
                 <button class="submit" type="button" onclick="crearUser()">Registrarse</button>
                 <p class="footer">¿Ya tienes cuenta?  <a href="../HTML/inicio_sesion.html" class="link">iniciar sesion</a></p>   
             </form>
-            <div></div>
             <div class="banner">
                 <h1 class="wel_text">Bienvenid@</h1>
                 <h1>Regístrate</h1>
