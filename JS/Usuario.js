@@ -10,44 +10,50 @@ async function  crearUser(){
     let codigoResp;
 
   
-    
-    console.log("creando usuario... ");
-    console.log("Nombre: " + inputNombre.value);
-    console.log("Apellido: " + inputApellido.value);
-    // Petición HTTP
-    try{   
-        respuesta = fetch('http://localhost:3001/CuentasGym/nuevo', {  // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
-            
-            method: 'POST', //metodo HTTP -- REEMPLAZAR POR EL METODO CORRESPONDIENTE
-            headers: {   //aca decimos que devuelve un JSON
-                'Accept': '*/*',
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            mode: "no-cors",    
-            body: new URLSearchParams({    // ACA VAN LOS DATOS
-                'Nombre': inputNombre.value,
-                'Apellido': inputApellido.value,
-                'Correo': inputCorreo.value,
-                'Password': inputPassword.value,
-              })   
-        })
-        .then(response => {
-            codigoResp = response.status;
-            console.log("Respuesta de petición: "+response.status);
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (inputCorreo.value.match(validRegex)){
+        console.log("creando usuario... ");
+        console.log("Nombre: " + inputNombre.value);
+        console.log("Apellido: " + inputApellido.value);
+        // Petición HTTP
+        try{   
+            respuesta = fetch('http://localhost:3001/CuentasGym/nuevo', {  // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
+                
+                method: 'POST', //metodo HTTP -- REEMPLAZAR POR EL METODO CORRESPONDIENTE
+                headers: {   //aca decimos que devuelve un JSON
+                    'Accept': '*/*',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                mode: "no-cors",    
+                body: new URLSearchParams({    // ACA VAN LOS DATOS
+                    'Nombre': inputNombre.value,
+                    'Apellido': inputApellido.value,
+                    'Correo': inputCorreo.value,
+                    'Password': inputPassword.value,
+                })   
+            })
+            .then(response => {
+                codigoResp = response.status;
+                console.log("Respuesta de petición: "+response.status);
 
-            //recargamos la pagina
-            if(codigoResp >= 200 && codigoResp < 300){
-            alert("Usuario registrado correctamente");
-            console.log("Recargando pagina...")
-            location.reload();
-            }
-        });
+                //recargamos la pagina
+                if(codigoResp >= 200 && codigoResp < 300){
+                alert("Usuario registrado correctamente");
+                console.log("Recargando pagina...")
+                location.reload();
+                }
+            });
+        }
+        catch (error){
+            //hubo un error
+            console.log("Error en registro: " + error);
+        }
     }
-    catch (error){
-        //hubo un error
-        console.log("Error en registro: " + error);
+    else{
+        inputCorreo.focus();
+        span2=document.querySelector(".span2");
+        span2.style.display="block"
     }
-
 }
     
 
