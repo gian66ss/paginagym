@@ -325,3 +325,13 @@ span{
 .logo span{
   color: var(--main-color);
 }
+
+.vence{
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.nuevouser{
+  font-size: 2em;
+  font-weight: 700;
+}

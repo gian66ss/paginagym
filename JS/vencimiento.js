@@ -88,10 +88,10 @@ function addUser() {
         const index = usersInfo.children.length;  // El índice será el número actual de usuarios
 
         userDiv.innerHTML = `
-            <p><strong>${name}</strong></p>
+            <strong class="nuevouser" >${name}</strong>
             <label for="date-${index}">Último Pago:</label>
             <input type="date" id="date-${index}" value="${lastPayment}">
-            <p id="expiration-${index}">Vence el: <strong>${expirationFormatted}</strong></p>
+            <p class="vence" id="expiration-${index}">Vence el: <strong>${expirationFormatted}</strong></p>
             <p id="alert-${index}" class="alert"></p>
             <button onclick="updatePaymentInfo(${index})">Actualizar Fecha de Pago</button>
         `;
