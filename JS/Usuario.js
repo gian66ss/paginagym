@@ -1,9 +1,12 @@
-async function  crearUser(){
+async function crearUser(){
 
     inputNombre = document.querySelector("#Nombre");
     inputApellido = document.querySelector("#Apellido")
     inputCorreo = document.querySelector("#Correo");
     inputPassword = document.querySelector("#Password");
+
+
+    
 
 
  
@@ -15,6 +18,9 @@ async function  crearUser(){
         console.log("creando usuario... ");
         console.log("Nombre: " + inputNombre.value);
         console.log("Apellido: " + inputApellido.value);
+        alert("Usuario registrado correctamente");
+        location="http://127.0.0.1:5501/HTML/index.html";
+        console.log("ok");
         // Petición HTTP
         try{   
             respuesta = fetch('http://localhost:3001/CuentasGym/nuevo', {  // REEMPLAZAR ACA POR LA RUTA CORRESPONDIENTE
@@ -38,9 +44,10 @@ async function  crearUser(){
 
                 //recargamos la pagina
                 if(codigoResp >= 200 && codigoResp < 300){
-                alert("Usuario registrado correctamente");
-                console.log("Recargando pagina...")
-                location.reload();
+                    console.log("ok");
+                // location.reload();
+                // console.log("Recargando pagina...")
+                // location.reload();
                 }
             });
         }
@@ -87,21 +94,26 @@ function eliminarUser(){
 }
 
 async function buscarUsuario(){
-    inputIDUsuario = document.querySelector("#idUsuario");
-    inputNombre = document.querySelector("#Nombre");
-    inputApellido = document.querySelector("#Apellido")
     inputCorreo = document.querySelector("#Correo");
     inputPassword = document.querySelector("#Password");
-    
-    const respuesta = await fetch("http://localhost:3001/CuentasGym/mostrar/" + inputIDUsuario
+    console.log("ok")
+    console.log(inputCorreo.value);
+    console.log(inputPassword.value);
+
+    const respuesta = await fetch("http://localhost:3001/CuentasGym/iniciarsesion" 
         , {
-            method: "GET", // *GET, POST, PUT, DELETE, etc.    
+            method: "POST", // *GET, POST, PUT, DELETE, etc.    
             headers: {
                 'Accept': 'application/json',
                 "Content-Type": "application/json",
-            }
+            },
+            mode: "no-cors",
+            body: new URLSearchParams({    // ACA VAN LOS DATOS
+                'Correo': inputCorreo.value,
+                'Password': inputPassword.value,
+            })   
         });
-
+    console.log(respuesta);
     datos = await respuesta.json(); 
 
 
@@ -110,10 +122,8 @@ async function buscarUsuario(){
     if (datos.length > 0){
         console.log("Con datos");
         datos.forEach(noti => {
-            inputIDUsuario.value= usu.id;
-            inputNombre.value = usu.Nombre;
-            inputApellido.value = usu.Apellido;
             inputCorreo.value = usu.Correo;
+            inputPassword.value = usu.Password;
         });
     }
     else{

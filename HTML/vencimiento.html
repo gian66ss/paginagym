@@ -14,7 +14,6 @@
         <span>Branco</span>
     </a>
     </div>
-  
       <nav class="navbar">
         <a href="../HTML/index.html">Inicio</a>
         <a href="../HTML/inicio_sesion.html">Iniciar sesion</a>
@@ -31,9 +30,12 @@
             <label for="newUserName">Nombre del usuario:</label>
             <input type="text" id="newUserName" placeholder="Nombre completo">
             <label for="newUserDate">Último pago:</label>
-            <input type="date" id="newUserDate">
+            <input type="date" id="Vencimiento"><span class="span2"></input>
             
-            <button class="agregar" onclick="addUser()">Agregar Usuario</button>
+            <button class="submit" type="button" onclick="crearVencimiento() ">Agregar usuario</button>
+            
+            <!-- <button class="submit" type="button" onclick="mostrar_vencimientos()">Agregar usuario</button> -->
+           <!-- <button class="submit" type="button" onclick="crearVencimiento()">Agregar</button> -->
             <div>
               <img class="imagen" src="../imagenes/file.png">
             </div>
@@ -43,18 +45,17 @@
                  Branco
               </span>
             </h1>
-          </div>
-         
+          </div>        
             <div id="users-info" class="users-info">
               <!-- Aquí se mostrará la información de los usuarios -->
           </div>         
     </div>
 
-    <script src="../JS/vencimiento.js"></script>
-    <script src="../JS/mostrar_vencimientos.js"></script>
-    <script src="../JS/Cuenta.js"></script>
-    <script>
+    <!-- <script src="../JS/vencimiento.js"></script>
+    <script src="../JS/mostrar_vencimientos.js"></script> -->
+    <script src="../JS/vencimientoBDD.js"></script>
+    <!-- <script>
       mostrar_vencimientos();
-    </script>
+    </script> -->
 </body>
 </html>            
