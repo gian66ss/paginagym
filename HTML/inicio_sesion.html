@@ -6,6 +6,7 @@
     <title>Login web</title>
     <link rel="stylesheet" href="../CSS/inicio_sesion.css">
     <link rel="stylesheet" href="cl-icon/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <header class="header">
@@ -27,13 +28,15 @@
                 <h1 class="title">Inicio</h1>
                 <div class="inp">
                     <input name="" id="Correo" type="Correo" class="input" placeholder="Correo" >
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa fa-envelope"></i>
                 </div>
                 <div class="inp">
-                    <input type="password" name="" id="Password" class="input" placeholder="Password">
-                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="Password" class="input" placeholder="Password">
+                    <i class="fa fa-eye-slash" aria-hidden="true" onclick="verpassword()"></i>
+                    <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
                 </div>
                 <button class="submit" type="button" onclick="buscarUsuario()">Iniciar sesión</button>
+            
                 <p class="footer">¿No tienes cuenta?  <a href="../HTML/registrarse.html" class="link">Por favor, Registrate</a></p>   
             </form>
             <div class="banner">
@@ -44,5 +47,7 @@
         </div>
     </main>
     <script src="../JS/Usuario.js"></script>
+    <script src="../HTML/inicio_sesion.html"></script>
+    <script src="../JS/ojo.js"></script>
 </body>
 </html>
