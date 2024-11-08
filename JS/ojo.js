@@ -1,6 +1,6 @@
 function verpassword() {
     const password = document.querySelector("#Password");
-    const eyeIcon = document.querySelector(".fa");
+    const eyeIcon = document.querySelector("#OjoActivado");
 
     if (password.type === "password") {
         password.type = "text";

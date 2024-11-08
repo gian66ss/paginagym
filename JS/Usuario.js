@@ -106,8 +106,10 @@ async function buscarUsuario(){
             headers: {
                 'Accept': 'application/json',
                 "Content-Type": "application/json",
+                'Access-Control-Allow-Credentials': true
             },
             mode: "no-cors",
+            credentials: 'include' ,
             body: new URLSearchParams({    // ACA VAN LOS DATOS
                 'Correo': inputCorreo.value,
                 'Password': inputPassword.value,
